@@ -457,7 +457,7 @@ def check_youtube_is_shorts(youtube_url):
 
 ### save json to s3
 def save_json_to_s3(json_path):
-    bucket_name = "haneul-youtube-bucket"
+    bucket_name = ""
     target_dir = "source_data"
     if os.path.isfile(json_path):
         s3_key = os.path.join(target_dir, os.path.basename(json_path))
@@ -481,7 +481,7 @@ def save_json_to_s3(json_path):
         print(f"Error: File {json_path} does not exist.")
         
 def upload_dict_to_s3(target_dir, video_id,input_dict):
-    bucket_name = "haneul-youtube-bucket"
+    bucket_name = ""
     
     target_json_path = os.path.join(target_dir, f"{video_id}.json")
     ## file as json_data 
